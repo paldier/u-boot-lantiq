@@ -224,6 +224,14 @@ config DEBUG_UART_APBUART
 	  will need to provide parameters to make this work. The driver will
 	  be available until the real driver model serial is running.
 
+config DEBUG_UART_INTEL_XWAY
+	bool "Intel XWAY UART"
+	depends on INTEL_XWAY_SERIAL
+	help
+	  Select this to enable a debug UART on Intel XWAY SoCs. You
+	  will need to provide parameters to make this work. The driver will
+	  be available until the real driver model serial is running.
+
 config DEBUG_UART_PL010
 	bool "pl010"
 	help
@@ -445,6 +453,12 @@ config SANDBOX_SERIAL
 	     -t raw-with-sigs	Raw mode, Ctrl-C will terminate U-Boot
 	     -t raw		Raw mode, Ctrl-C is processed by U-Boot
 	     -t cooked		Cooked mode, Ctrl-C terminates
+
+config INTEL_XWAY_SERIAL
+	bool "Support for Intel XWAY UART"
+	depends on ARCH_INTEL_XWAY && DM_SERIAL
+	help
+	  Select this to enable UART on Intel XWAY SoCs.
 
 config UNIPHIER_SERIAL
 	bool "Support for UniPhier on-chip UART"
