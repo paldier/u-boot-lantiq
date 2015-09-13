@@ -84,6 +84,13 @@ config ARCH_BMIPS
 	select RAM
 	select SYSRESET
 
+config ARCH_INTEL_XWAY
+	bool "Support Intel XWAY SoCs"
+	select OF_CONTROL
+	select DM
+	select CLK
+	select RAM
+
 config MACH_PIC32
 	bool "Support Microchip PIC32"
 	select OF_CONTROL
@@ -134,6 +141,7 @@ source "board/pb1x00/Kconfig"
 source "board/qemu-mips/Kconfig"
 source "arch/mips/mach-ath79/Kconfig"
 source "arch/mips/mach-bmips/Kconfig"
+source "arch/mips/mach-intel/Kconfig"
 source "arch/mips/mach-pic32/Kconfig"
 
 if MIPS
