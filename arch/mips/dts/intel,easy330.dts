@@ -1,0 +1,42 @@
+/*
+ * Copyright (C) 2016 Daniel Schwierzeck, daniel.schwierzeck@gmail.com
+ *
+ * SPDX-License-Identifier:	GPL-2.0+
+ */
+
+/dts-v1/;
+
+#include "intel,grx330.dtsi"
+
+/ {
+	model = "Intel EASY330 evaluation board";
+	compatible = "intel,easy330", "intel,grx330";
+
+	aliases {
+		serial0 = &uart1;
+	};
+
+	chosen {
+		stdout-path = "serial0:115200n8";
+	};
+};
+
+&stp {
+	status = "ok";
+};
+
+&sram {
+	u-boot,dm-pre-reloc;
+};
+
+&uart1 {
+	u-boot,dm-pre-reloc;
+};
+
+&cgu {
+	u-boot,dm-pre-reloc;
+};
+
+&mc {
+	u-boot,dm-pre-reloc;
+};
