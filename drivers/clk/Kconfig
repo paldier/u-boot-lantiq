@@ -36,6 +36,12 @@ config CLK_BOSTON
 	help
 	  Enable this to support the clocks
 
+config CLK_XWAY
+	bool "Enable clock driver support for Intel XWAY SoCs"
+	depends on CLK && ARCH_INTEL_XWAY
+	help
+	  This clock driver adds support for clocks on Intel XWAY SoCs.
+
 config CLK_ZYNQ
 	bool "Enable clock driver support for Zynq"
 	depends on CLK && ARCH_ZYNQ
